@@ -66,53 +66,77 @@ footer h3 {
     margin-bottom: 20px;
 }
 
-/* --- New Form Styles (to match footer) --- */
+/* --- Form Styling for Professional Look --- */
+
+/* Base styling for the form container */
 .contact-form {
-    max-width: 500px; /* Adjust as needed */
-    margin: 30px auto 0; /* Center the form and add top margin */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for form */
-    border-radius: 8px;
+    max-width: 600px; /* Adjust width as needed for your layout */
+    margin: 40px auto; /* Centers the form and provides vertical spacing */
+    padding: 30px;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px; /* Slightly rounded corners for a softer look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Use a font that matches your site, e.g., 'Roboto', 'Open Sans' */
+    color: #333; /* Default text color for the form */
 }
 
+/* Styling for labels */
 .contact-form label {
-    display: block; /* Makes labels appear on their own line */
+    display: block; /* Each label on its own line */
     margin-bottom: 8px;
-    color: #fff; /* Match footer text color */
-    font-size: 1.1em;
-    text-align: left; /* Align labels left */
+    font-size: 1em; /* Adjust font size to match your site's body text */
+    font-weight: bold; /* Make labels stand out slightly */
+    color: #555; /* Slightly softer color than main text */
 }
 
+/* Styling for text input and textarea fields */
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: calc(100% - 20px); /* Full width minus padding */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #555; /* Darker border */
-    border-radius: 5px;
-    background-color: #444; /* Darker input background */
-    color: #fff; /* Light text in input */
-    font-size: 1em;
-    font-family: Arial, sans-serif; /* Match footer font */
+    width: calc(100% - 24px); /* Full width minus padding and border */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Slightly rounded input fields */
+    background-color: #f9f9f9; /* Off-white background for inputs */
+    color: #333; /* Input text color */
+    font-size: 1em; /* Match site's text size */
+    font-family: inherit; /* Inherit font from the form container */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus effect */
 }
 
-.contact-form input[type="email"]::placeholder,
-.contact-form textarea::placeholder {
-    color: #bbb; /* Placeholder text color */
+/* Focus state for input and textarea */
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff; /* A common primary color, change to your site's accent color */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow on focus */
+    outline: none; /* Remove default outline */
 }
 
-.contact-form button {
-    background-color: #ffd700; /* Match a highlight color from your footer or branding */
-    color: #333; /* Dark text for the button */
+/* Styling for the submit button */
+.contact-form button[type="submit"] {
+    display: block; /* Make button full width if desired, or use inline-block */
+    width: auto; /* Adjust to fit content or set a specific width */
     padding: 12px 25px;
+    background-color: #007bff; /* Use your site's primary accent color here */
+    color: #ffffff; /* White text for the button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
-.contact-form button:hover {
-    background-color: #e0b800; /* Slightly darker on hover */
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Slightly darker on hover */
+    transform: translateY(-1px); /* Slight lift effect on hover */
+}
+
+/* Optional: Add responsive adjustments if needed */
+@media (max-width: 768px) {
+    .contact-form {
+        margin: 20px 15px; /* Adjust margins for smaller screens */
+        padding: 20px;
+    }
 }
