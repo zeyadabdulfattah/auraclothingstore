@@ -52,3 +52,67 @@ body.fade-in {
 .wishlist-icon.active {
     color: #dc3545; /* Stays red when active */
 }
+/* --- Footer Styles (Existing) --- */
+footer {
+    background-color: #333; /* Example footer background */
+    color: #fff; /* Example footer text color */
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+footer h3 {
+    color: #ffd700; /* Example heading color */
+    margin-bottom: 20px;
+}
+
+/* --- New Form Styles (to match footer) --- */
+.contact-form {
+    max-width: 500px; /* Adjust as needed */
+    margin: 30px auto 0; /* Center the form and add top margin */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for form */
+    border-radius: 8px;
+}
+
+.contact-form label {
+    display: block; /* Makes labels appear on their own line */
+    margin-bottom: 8px;
+    color: #fff; /* Match footer text color */
+    font-size: 1.1em;
+    text-align: left; /* Align labels left */
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    background-color: #444; /* Darker input background */
+    color: #fff; /* Light text in input */
+    font-size: 1em;
+    font-family: Arial, sans-serif; /* Match footer font */
+}
+
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+    color: #bbb; /* Placeholder text color */
+}
+
+.contact-form button {
+    background-color: #ffd700; /* Match a highlight color from your footer or branding */
+    color: #333; /* Dark text for the button */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e0b800; /* Slightly darker on hover */
+}
