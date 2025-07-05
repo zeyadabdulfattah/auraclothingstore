@@ -52,31 +52,17 @@ body.fade-in {
 .wishlist-icon.active {
     color: #dc3545; /* Stays red when active */
 }
-/* --- Footer Styles (Existing) --- */
-footer {
-    background-color: #333; /* Example footer background */
-    color: #fff; /* Example footer text color */
-    padding: 40px 20px;
-    text-align: center;
-    font-family: Arial, sans-serif; /* Example font */
-}
-
-footer h3 {
-    color: #ffd700; /* Example heading color */
-    margin-bottom: 20px;
-}
-
-/* --- Form Styling for Professional Look --- */
+/* --- Form Styling for Professional Look (Revised) --- */
 
 /* Base styling for the form container */
 .contact-form {
-    max-width: 600px; /* Adjust width as needed for your layout */
+    max-width: 450px; /* Made the form smaller */
     margin: 40px auto; /* Centers the form and provides vertical spacing */
     padding: 30px;
     background-color: #ffffff; /* White background for the form */
-    border-radius: 8px; /* Slightly rounded corners for a softer look */
+    border-radius: 8px; /* Slightly rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: 'Arial', sans-serif; /* Use a font that matches your site, e.g., 'Roboto', 'Open Sans' */
+    font-family: 'Arial', sans-serif; /* Use a font that matches your site */
     color: #333; /* Default text color for the form */
 }
 
@@ -84,9 +70,9 @@ footer h3 {
 .contact-form label {
     display: block; /* Each label on its own line */
     margin-bottom: 8px;
-    font-size: 1em; /* Adjust font size to match your site's body text */
-    font-weight: bold; /* Make labels stand out slightly */
-    color: #555; /* Slightly softer color than main text */
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
 }
 
 /* Styling for text input and textarea fields */
@@ -99,38 +85,46 @@ footer h3 {
     border-radius: 5px; /* Slightly rounded input fields */
     background-color: #f9f9f9; /* Off-white background for inputs */
     color: #333; /* Input text color */
-    font-size: 1em; /* Match site's text size */
-    font-family: inherit; /* Inherit font from the form container */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus effect */
+    font-size: 1em;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Focus state for input and textarea */
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-    border-color: #007bff; /* A common primary color, change to your site's accent color */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow on focus */
-    outline: none; /* Remove default outline */
+    border-color: #007bff; /* Use your site's accent color */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
 }
 
 /* Styling for the submit button */
 .contact-form button[type="submit"] {
-    display: block; /* Make button full width if desired, or use inline-block */
-    width: auto; /* Adjust to fit content or set a specific width */
+    display: block;
+    width: auto;
     padding: 12px 25px;
-    background-color: #007bff; /* Use your site's primary accent color here */
-    color: #ffffff; /* White text for the button */
-    border: none;
+    background-color: #ffffff; /* White background for the button */
+    color: #333; /* Black text for the button */
+    border: 1px solid #333; /* Subtle black border */
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: bold;
     letter-spacing: 0.5px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .contact-form button[type="submit"]:hover {
-    background-color: #0056b3; /* Slightly darker on hover */
-    transform: translateY(-1px); /* Slight lift effect on hover */
+    background-color: #333; /* Black background on hover */
+    color: #ffffff; /* White text on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* --- Heading Alignment (Applies to your H3 in the footer) --- */
+/* Assuming your "Get in Touch" heading is an H3 within the footer-content */
+.footer-content h3 {
+    text-align: center; /* Aligns the heading to the center */
+    /* Add any other existing H3 styles here */
 }
 
 /* Optional: Add responsive adjustments if needed */
@@ -139,4 +133,11 @@ footer h3 {
         margin: 20px 15px; /* Adjust margins for smaller screens */
         padding: 20px;
     }
+}
+/* --- Paragraph Alignment --- */
+/* Assuming your paragraph is within the footer-content class */
+.footer-content p {
+    text-align: center; /* Centers the paragraph text */
+    margin-bottom: 25px; /* Add some space below the paragraph before the form */
+    /* Add any other existing paragraph styles here like font-size, color etc. */
 }
