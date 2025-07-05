@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Aura</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="animations.css" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9fa; /* Light background for the page */
+      }
+      .navbar-brand {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      .nav-link.cart-icon-link {
+        position: relative;
+        display: block;
+      }
+      .cart-badge {
+        position: absolute;
+        top: 0.5rem;
+        right: 0;
+        transform: translate(50%, -50%);
+        background-color: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        padding: 0.15em 0.5em;
+        font-size: 0.7rem;
+        line-height: 1;
+        min-width: 1.4em;
+        text-align: center;
+        border: 2px solid white;
+      }
+      .checkout-header {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-bottom: 1px solid #dee2e6;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      .checkout-container {
+        max-width: 960px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      .order-summary-card {
+        background-color: #f1f5f8; /* Light gray background for summary */
+        border: 1px solid #e0e6eb;
+        border-radius: 0.5rem;
+      }
+      .payment-methods .form-check {
+        margin-bottom: 0.75rem;
+      }
+      .payment-methods .form-check-input {
+        margin-top: 0.35em;
+      }
+      .payment-methods label img {
+        height: 24px; /* Icon size for payment methods */
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+      .btn-primary:hover {
+        background-color: #0b5ed7;
+        border-color: #0b5ed7;
+      }
+      .card {
+        border: none; /* Remove default card border */
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-white sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Aura</a>
+        <ul class="navbar-nav ms-auto align-items-center flex-row">
+          <li class="nav-item">
+            <a class="nav-link cart-icon-link" href="cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="checkout-header">
+      <div class="container">
+        <h1 class="display-5 fw-bold mb-0">Checkout</h1>
+        <p class="text-muted mb-0">Complete your purchase</p>
+      </div>
+    </div>
+
+    <main class="container checkout-container">
+      <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Shipping Address</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">Valid last name is required.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label"
+                  >Email <span class="text-muted">(Optional)</span></label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="you@example.com"
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="1234 Main St"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country" required>
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>Egypt</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <select class="form-select" id="state" required>
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                  <option>New York</option>
+                  <option>Cairo</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="zip" class="form-label">Zip</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zip"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">Zip code required.</div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <h4 class="mb-3">Payment</h4>
+
+            <div class="my-3 payment-methods">
+              <div class="form-check">
+                <input
+                  id="credit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="form-check-input"
+                  checked
+                  required
+                  value="credit"
+                />
+                <label class="form-check-label" for="credit"
+                  >Credit Card
+                  <img
+                    src="https://img.icons8.com/color/48/000000/visa.png"
+                    alt="Visa"
+                  />
+                  <img
+                    src="https://img.icons8.com/color/48/000000/mastercard.png"
+                    alt="Mastercard"
+                  />
+                  <img
+                    src="https://img.icons8.com/color/48/000000/amex.png"
+                    alt="Amex"
+                  />
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  id="paypal"
+                  name="paymentMethod"
+                  type="radio"
+                  class="form-check-input"
+                  required
+                  value="paypal"
+                />
+                <label class="form-check-label" for="paypal"
+                  >PayPal
+                  <img
+                    src="https://img.icons8.com/color/48/000000/paypal.png"
+                    alt="PayPal"
+                  />
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  id="apple-pay"
+                  name="paymentMethod"
+                  type="radio"
+                  class="form-check-input"
+                  required
+                  value="apple-pay"
+                />
+                <label class="form-check-label" for="apple-pay"
+                  >Apple Pay
+                  <img
+                    src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png"
+                    alt="Apple Pay"
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div id="credit-card-form" class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-name"
+                  placeholder=""
+                  required
+                />
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">Name on card is required</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label"
+                  >Credit card number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-number"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-expiration"
+                  placeholder="MM/YY"
+                  required
+                />
+                <div class="invalid-feedback">Expiration date required</div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-cvv"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">Security code required</div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <button
+              class="w-100 btn btn-primary btn-lg"
+              type="submit"
+              id="place-order-btn"
+            >
+              Place Order
+            </button>
+          </form>
+        </div>
+
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <div class="card order-summary-card p-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-primary">Your cart</span>
+              <span
+                class="badge bg-primary rounded-pill"
+                id="checkout-cart-count"
+                >0</span
+              >
+            </h4>
+            <ul class="list-group mb-3" id="checkout-order-summary"></ul>
+            <p class="text-muted small text-center mt-3 mb-0">
+              Shipping calculated at next step or contact for international.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 bg-dark text-white mt-5">
+      <div class="container text-center">
+        <p>&copy; 2025 Aura. All Rights Reserved.</p>
+      </div>
+
+      <div class="container mt-5 py-4 text-center bg-white rounded">
+        <p class="mb-2">
+          <small class="text-muted">
+            Love this design and want a similar website for your business?
+          </small>
+        </p>
+        <a
+          href="zeyadabdulfattahh@gmail.com"
+          class="btn btn-outline-dark btn-sm"
+        >
+          Get in Touch!
+        </a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      // and for handling payment method display
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+
+        // Handle place order button
+        document
+          .getElementById("place-order-btn")
+          .addEventListener("click", (e) => {
+            // Check form validity before proceeding
+            const form = document.querySelector(".needs-validation");
+            if (form.checkValidity()) {
+              e.preventDefault(); // Prevent default form submission if valid
+              localStorage.removeItem("cart"); // Clear cart on successful order
+              window.location.href = "success.html"; // Redirect to success page
+            } else {
+              e.preventDefault(); // Prevent default if invalid
+              e.stopPropagation(); // Stop propagation if invalid
+            }
+            form.classList.add("was-validated"); // Add validation class
+          });
+      })();
+    </script>
+  </body>
+</html>

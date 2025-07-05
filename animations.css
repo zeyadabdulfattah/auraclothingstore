@@ -1,0 +1,54 @@
+/* animations.css */
+
+/* Simple fade-in for page content on load */
+body.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover effect for product cards */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow */
+}
+
+/* Hover effect for buttons (e.g., Add to Cart, Checkout) */
+.btn-dark {
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-dark:hover {
+    background-color: #333; /* Slightly darker on hover */
+    transform: translateY(-1px); /* Slight lift */
+}
+
+.btn-dark:active {
+    transform: translateY(0); /* Press effect */
+}
+
+/* Optional: Subtle animation for wishlist icon */
+.wishlist-icon {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.wishlist-icon:hover {
+    color: #dc3545; /* Red on hover */
+    transform: scale(1.1); /* Slightly enlarge */
+}
+
+.wishlist-icon.active {
+    color: #dc3545; /* Stays red when active */
+}
